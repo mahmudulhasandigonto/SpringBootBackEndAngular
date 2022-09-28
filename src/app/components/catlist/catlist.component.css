@@ -1,0 +1,12 @@
+.center {
+   text-align: center;
+}
+
+.colorRed {
+   color: red;
+}
+
+.colorInfo {
+   background-color: rgb(168, 158, 21);
+   color: white;
+}

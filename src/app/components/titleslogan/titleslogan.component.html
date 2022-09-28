@@ -1,0 +1,41 @@
+<div class="grid_10">
+   <div class="box round first grid">
+      <h2>Update Site Title and Description</h2>
+      <p *ngIf="message" class="message">{{message}}</p>
+      <div class="block sloginblock">
+         <form>
+            <table class="form">
+               <tr>
+                  <td>
+                     <label>Website Title</label>
+                  </td>
+                  <td>
+                     <input type="text" placeholder="Enter Website Title..." name="bal" class="medium"
+                        [(ngModel)]="forUpdateTitleAndSlogan.title" />
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <label>Website Slogan</label>
+                  </td>
+                  <td>
+                     <input type="text" [(ngModel)]="forUpdateTitleAndSlogan.slogan"
+                        placeholder="Enter Website Slogan..." name="slogan" class="medium" />
+                  </td>
+               </tr>
+
+
+               <tr>
+                  <td>
+                  </td>
+                  <td>
+                     <input type="submit" name="submit"
+                        (click)="updateTitleSlogan(forUpdateTitleAndSlogan.titleAndSloganId, forUpdateTitleAndSlogan)"
+                        Value="Update" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+      </div>
+   </div>
+</div>

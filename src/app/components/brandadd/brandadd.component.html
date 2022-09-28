@@ -1,0 +1,26 @@
+<div class="grid_10">
+   <div class="box round first grid">
+      <h2>Add New Brand</h2>
+      <p *ngIf="message" class="message">
+         {{message}}
+      </p>
+      <div class="block copyblock">
+
+         <form>
+            <table class="form">
+               <tr>
+                  <td>
+                     <input type="text" name="cat" [(ngModel)]="brand.brandName" placeholder="Enter Brand Name..."
+                        class="medium" />
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <input type="submit" name="submit" (click)="postBrand()" Value="Save" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+      </div>
+   </div>
+</div>

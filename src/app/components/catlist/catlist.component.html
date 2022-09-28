@@ -1,0 +1,71 @@
+<div *ngIf="willShowList then list else formData"></div>
+
+
+<ng-template #formData>
+   <div class="grid_10">
+      <div class="box round first grid">
+         <h2>Add New Category</h2>
+         <p *ngIf="message" class="message">
+            {{message}}
+         </p>
+         <div class="block copyblock">
+
+            <form>
+               <table class="form">
+                  <tr>
+                     <td>
+                        <input type="text" name="cat" [(ngModel)]="forUpdateCategory.categoryName"
+                           placeholder="Enter Category Name..." class="medium" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <input type="submit" name="submit"
+                           (click)="update(forUpdateCategory.categoryId, forUpdateCategory)" Value="Save" />
+                     </td>
+                  </tr>
+               </table>
+            </form>
+         </div>
+      </div>
+   </div>
+</ng-template>
+
+<ng-template #list>
+   <div class="grid_10">
+      <div class="box round first grid">
+         <h2>Category List</h2>
+         <div class="block">
+
+            <table class="data display datatable" id="example">
+               <thead>
+                  <tr>
+                     <th>Serial No.</th>
+                     <th>Category Name</th>
+                     <th>Action</th>
+                  </tr>
+               </thead>
+               <tbody class="center">
+                  <tr *ngFor="let category of categoryList" class="odd gradeX">
+                     <td>{{category.categoryId}}</td>
+                     <td>{{category.categoryName}}</td>
+                     <td>
+                        <button class="colorInfo" (click)="getInfo(category.categoryId)">Edit</button>
+                        || <button class="colorRed" (click)="deleteCat(category.categoryId)">Delete</button>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+   <script type="text/javascript">
+      $(document).ready(function () {
+         setupLeftMenu();
+
+         $('.datatable').dataTable();
+         setSidebarHeight();
+      });
+
+   </script>
+</ng-template>
